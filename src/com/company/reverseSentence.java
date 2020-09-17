@@ -42,6 +42,8 @@ public class reverseSentence {
 
         //System.out.println("========================");
         System.out.println(quote);
+        System.out.println();
+        System.out.println("Skriver ut vart annat ord");
         System.out.println(printEveryOtherWord(quote));
     }
 }
