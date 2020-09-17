@@ -40,32 +40,19 @@ public class Files {
         private static void printFileInfo(String filePath) {
             // Skriv din kod här
         }
-
     */
     private static void printFileInfo(String filePath) {
-        File file = new File("txtfiler\\fil1.txt");
+        File file = new File(filePath);
+        System.out.println("Filen ligger här: " + file.getAbsolutePath());
+        System.out.println("Filen heter: " + file.getName());
+        System.out.println("Existerar filen?: " + file.exists());
+        System.out.println("Kan filen läsas?: " + file.canRead());
+        System.out.println();
     }
 
     public static void main(String[] args) {
         printFileInfo("txtfiler\\fil1.txt");
         printFileInfo("txtfiler\\fil2.txt");
         printFileInfo("txtfiler\\fil3.txt");
-
-        // Ange vilken fil vi vill jobba med
-
-        System.out.println("Filen ligger här: " + file.getAbsolutePath());
-        System.out.println("Filen heter: " + file.getName());
-        System.out.println("Existerar filen?: " + file.exists());
-        System.out.println("Kan filen läsas?: " + file.canRead());
-
-        /*
-
-             3: Skapa två till nya filer. Ex: C:\temp\java\fil2.txt, C:\temp\java\fil3.txt
-        Gör en ny metod som tar en sökväg till en fil som en String, och skriver ut allt från steg 2.
-        Anropa funktionen med alla tre filerna du skapade i steg 1.
-         */
-
     }
-
-
 }
