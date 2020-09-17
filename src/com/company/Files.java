@@ -1,10 +1,7 @@
 package com.company;
 
 import java.io.*;
-import java.nio.file.Path;
 import java.util.*;
-import java.util.stream.Stream;
-
 public class Files {
     /*
 
