@@ -45,11 +45,11 @@ public class Files {
     */
     private static void printFileInfo(String filePath) {
         File file = new File(filePath);
-        System.out.println("Filen ligger här: " + file.getAbsolutePath());
-        System.out.println("Filen heter: " + file.getName());
-        System.out.println("Är en fil?: " + file.isFile());
-        System.out.println("Existerar filen?: " + file.exists());
-        System.out.println("Kan filen läsas?: " + file.canRead());
+        System.out.println("Location of the file: " + file.getAbsolutePath());
+        System.out.println("File name: " + file.getName());
+        System.out.println("Is it a file?: " + file.isFile());
+        System.out.println("Does the file excist?: " + file.exists());
+        System.out.println("Can the file be read?: " + file.canRead());
         System.out.println();
     }
     private static void skapaNyFil(String filePath, String fileMessage) {
@@ -76,7 +76,7 @@ public class Files {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Namn på filen du letar efter?: ");
+        System.out.print("The name of the file you search for?: ");
         String filNamn = sc.nextLine();
 
         printFileInfo("txtfiler\\" + filNamn + ".txt");
@@ -89,18 +89,18 @@ public class Files {
         System.out.println();
         boolean run = true;
         while (run) {
-            System.out.print("Skapa en ny fil? ");
+            System.out.print("Create a new file? ");
             String JagVillSkapaEnNyFil = sc.nextLine();
 
-            if (JagVillSkapaEnNyFil.equals("ja")) {
-                System.out.print("Filnamn?: ");
+            if (JagVillSkapaEnNyFil.equals("yes")) {
+                System.out.print("Filename?: ");
                 String fileName = sc.nextLine();
 
-                System.out.print("Innehåll?: ");
+                System.out.print("Content?: ");
                 String fileMessage = sc.nextLine();
 
                 skapaNyFil("txtfiler\\" + fileName, fileMessage);
-            } else if (JagVillSkapaEnNyFil.equals("nej")) {
+            } else if (JagVillSkapaEnNyFil.equals("no")) {
                 run = false;
             }
         }
