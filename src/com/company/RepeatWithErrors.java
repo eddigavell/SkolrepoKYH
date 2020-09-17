@@ -29,13 +29,12 @@ public class RepeatWithErrors {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Write something: ");
+        String input = sc.nextLine();
+        System.out.print("Number of times to repeat?: ");
+        int nRepeat = sc.nextInt();+
 
         try {
-            System.out.print("Write something: ");
-            String input = sc.next();
-            System.out.print("Number of times to repeat?: ");
-            int nRepeat = sc.nextInt();
-
             System.out.print(input.repeat(nRepeat));
         } catch (Exception e) {
             System.out.println("Error, cannot understand that number");
