@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.File;
+import java.util.*;
 
 public class Files {
     /*
@@ -49,7 +50,7 @@ public class Files {
 
         // Ange vilken fil vi vill jobba med
         File file = new File("txtfiler\\fil1.txt");
-
+        System.out.println("Filen ligger här: " + file.getAbsolutePath());
 
         // Skriv ut information om filen
         System.out.println("Existerar filen? " + file.exists());
