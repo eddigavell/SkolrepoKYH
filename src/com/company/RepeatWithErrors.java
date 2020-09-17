@@ -32,17 +32,8 @@ public class RepeatWithErrors {
         System.out.print("Write something: ");
         String input = sc.nextLine();
         System.out.print("Number of times to repeat?: ");
-        int nRepeat = sc.nextInt();+
-
-<<<<<<< HEAD
-=======
-
-            System.out.print("Write something: ");
-            String input = sc.next();
-
-            System.out.print("Number of times to repeat?: ");
-            int nRepeat = sc.nextInt();
->>>>>>> origin/master
+        int nRepeat = sc.nextInt();
+                
         try {
             System.out.print(input.repeat(nRepeat));
         } catch (Exception e) {
