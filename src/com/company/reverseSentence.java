@@ -9,6 +9,7 @@ public class reverseSentence {
 
         Scanner sc = new Scanner(s);
 
+
         while(sc.hasNext()) {
             /*if (wordCount % 2 == 0) {
                 resultVartAnnatOrd = resultVartAnnatOrd + " " + sc.next();
