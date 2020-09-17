@@ -1,4 +1,5 @@
 package com.company;
+import java.util.*;
 
 public class RepeatWithErrors {
     /* Detta program ska be användaren att skriva in en text, sedan skriva ut det på skärmen flera gånger.
@@ -27,6 +28,17 @@ public class RepeatWithErrors {
      */
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Write something: ");
+        String input = sc.next();
+        System.out.print("Number of times to repeat?: ");
+        int nRepeat = sc.nextInt();
+
+        System.out.print(input.repeat(nRepeat));
+
+
+
         // Gör en scanner
         // Be användaren om input (två gånger)
         // Repetera texten flera gånger.
