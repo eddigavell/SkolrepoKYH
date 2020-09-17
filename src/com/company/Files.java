@@ -1,7 +1,9 @@
 package com.company;
 
-import java.io.File;
+import java.io.*;
+import java.nio.file.Path;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Files {
     /*
@@ -45,11 +47,32 @@ public class Files {
         File file = new File(filePath);
         System.out.println("Filen ligger här: " + file.getAbsolutePath());
         System.out.println("Filen heter: " + file.getName());
+        System.out.println("Är en fil?: " + file.isFile());
         System.out.println("Existerar filen?: " + file.exists());
         System.out.println("Kan filen läsas?: " + file.canRead());
         System.out.println();
     }
+    private static void skapaNyFil(String filePath, String fileMessage) {
+        try {
+            File file = new File(filePath);
+            if(file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
 
+                //Write Content
+                FileWriter writer = new FileWriter(file);
+                writer.write(fileMessage);
+                writer.close();
+            } else {
+                System.out.println("File already exists.");
+
+                System.out.println(file);
+                System.out.println(fileMessage);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -59,5 +82,29 @@ public class Files {
         printFileInfo("txtfiler\\" + filNamn + ".txt");
         printFileInfo("txtfiler\\fil2.txt");
         printFileInfo("txtfiler\\fil3.txt");
+
+
+        //Skapa en ny fil med path, namn, innehåll
+        System.out.println("======================");
+        System.out.println();
+        boolean run = true;
+        while (run) {
+            System.out.print("Skapa en ny fil? ");
+            String JagVillSkapaEnNyFil = sc.nextLine();
+
+            if (JagVillSkapaEnNyFil.equals("ja")) {
+                System.out.print("Filnamn?: ");
+                String fileName = sc.nextLine();
+
+                System.out.print("Innehåll?: ");
+                String fileMessage = sc.nextLine();
+
+                skapaNyFil("txtfiler\\" + fileName, fileMessage);
+            } else if (JagVillSkapaEnNyFil.equals("nej")) {
+                run = false;
+            }
+        }
+
+
     }
 }
