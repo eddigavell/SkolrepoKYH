@@ -51,7 +51,12 @@ public class Files {
     }
 
     public static void main(String[] args) {
-        printFileInfo("txtfiler\\fil1.txt");
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Namn på filen du letar efter?: ");
+        String filNamn = sc.nextLine();
+
+        printFileInfo("txtfiler\\" + filNamn + ".txt");
         printFileInfo("txtfiler\\fil2.txt");
         printFileInfo("txtfiler\\fil3.txt");
     }
