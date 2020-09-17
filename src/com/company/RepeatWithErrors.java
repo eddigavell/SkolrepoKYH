@@ -33,7 +33,7 @@ public class RepeatWithErrors {
         String input = sc.nextLine();
         System.out.print("Number of times to repeat?: ");
         int nRepeat = sc.nextInt();
-                
+
         try {
             System.out.print(input.repeat(nRepeat));
         } catch (Exception e) {

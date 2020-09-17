@@ -43,13 +43,15 @@ public class Files {
     */
 
     public static void main(String[] args) {
+
+
         // Något att starta från
 
         // Ange vilken fil vi vill jobba med
-        File f = new File("C:\\path\\to\\file.txt");
-        // C:\Users\eddi\IdeaProjects\Programmingexercises\txtfiler\fil1.txt
+        File file = new File("txtfiler\\fil1.txt");
+
 
         // Skriv ut information om filen
-        System.out.println("Existerar filen? " + f.exists());
+        System.out.println("Existerar filen? " + file.exists());
     }
 }
