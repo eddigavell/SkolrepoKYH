@@ -17,8 +17,11 @@ public class CopyFile {
         if (fromFile.exists()){
             try {
                 Scanner sc  = new Scanner(fromFile);
+                String s;
                 while (sc.hasNextLine()){
-                    toFile.write(sc.nextLine() + "\n");
+                    s = sc.nextLine();
+                    System.out.println(s);
+                    toFile.write(s+ "\n");
                 }
                 toFile.close();
                 System.out.println("Filen är skapad.");
