@@ -24,14 +24,14 @@ public class Recursion {
             helloRec(i-1);
         }
 
-/*  ----Annan typ av if sats men samma resultat-----
-        if (i == 0) {
-            return;
-        } else {
-            System.out.println("hello " + i);
-            helloRec(i-1);
-        }
-*/
+        /*  ----Annan typ av if sats men samma resultat-----
+            if (i == 0) {
+                return;
+            } else {
+                System.out.println("hello " + i);
+                helloRec(i-1);
+            }
+        */
     }
 
     public static void main(String[] args) {
