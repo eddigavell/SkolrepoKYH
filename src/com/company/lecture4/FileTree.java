@@ -2,7 +2,6 @@ package com.company.lecture4;
 
 import java.io.File;
 import java.util.Arrays;
-import java.util.List;
 
 public class FileTree {
 
