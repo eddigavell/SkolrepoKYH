@@ -9,8 +9,7 @@ public class LabbWeek2 {
 
     public static String pathToCurrentFolder(String Path) {
         Path currentRelativePath = Paths.get("");
-        String nuVarandeMapp = currentRelativePath.toAbsolutePath().toString();
-        return nuVarandeMapp;
+        return currentRelativePath.toAbsolutePath().toString();
     }
 
     public static void searchThroughDirectoryAndSubdirectories(String directoryName, String targetString) {
@@ -22,7 +21,7 @@ public class LabbWeek2 {
         assert fList != null;
         for (File file : fList) {
             if (file.isFile()) {
-                readFilesinFolder(file.getAbsolutePath(), targetString);
+                readFilesInFolder(file.getAbsolutePath(), targetString);
             } else if (file.isDirectory()) {
                 searchThroughDirectoryAndSubdirectories(file.getAbsolutePath(), targetString);
             }
@@ -41,7 +40,7 @@ public class LabbWeek2 {
         }
     }
 
-    public static void readFilesinFolder(String filename, String targetString) {
+    public static void readFilesInFolder(String filename, String targetString) {
         File file = new File(filename);
 
         if (file.exists()) {

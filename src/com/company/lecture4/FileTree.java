@@ -14,8 +14,9 @@ public class FileTree {
             try {
                 System.out.println("Mapp" + file.getCanonicalPath());
                 File[] folderContents = file.listFiles();
-                for (int i = 0; i < folderContents.length; i++) {
-                    File f = folderContents[i];
+
+                assert folderContents != null;
+                for (File f : folderContents) {
                     printInfo(f);
                 }
 
