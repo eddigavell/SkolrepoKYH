@@ -13,7 +13,11 @@ import java.util.Scanner;
    Alt 2: Lägg filen i mappen "programmingexercises" och använd bara filnamnet i koden nedan
  */
 
+
+
+
 public class ReadFile {
+
     public static void main(String[] args) {
         // Skapa ett File-object, som styr vilken fil vi vill läsa
         //File file = new File("C:\\Users\\eddi\\Documents\\Programmering\\KYH\\SkolrepoKYH\\txtfiler\\CJL.txt");
