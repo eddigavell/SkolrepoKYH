@@ -3,11 +3,24 @@ package com.company.lecture4;
 public class Recursion {
     public static void main(String[] args) {
         // Starta med att anropa funktionen
-        helloRec(5);
+        helloRec(50);
     }
 
     public static void helloRec(int i){
-        /*
+        if (i != 0){
+            System.out.println("hello " +i);
+            helloRec(i-1);
+        }
+/*
+        if (i == 0) {
+            return;
+        } else {
+            System.out.println("hello " + i);
+            helloRec(i-1);
+        }
+*/
+
+            /*
         helloRec: Denna funktion tar in ett heltal "i".
 
         Instruktioner:
