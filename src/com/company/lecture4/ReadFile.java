@@ -15,13 +15,12 @@ import java.util.Scanner;
 
 public class ReadFile {
     public static void main(String[] args) {
+        // Skapa ett File-object, som styr vilken fil vi vill läsa
+        //File file = new File("C:\\Users\\eddi\\Documents\\Programmering\\KYH\\SkolrepoKYH\\txtfiler\\CJL.txt");
+        File file = new File("txtfiler\\CJL.txt");
+        System.out.println(file.exists());
+
         try {
-            // Skapa ett File-object, som styr vilken fil vi vill läsa
-            //File file = new File("C:\\Users\\eddi\\Documents\\Programmering\\KYH\\SkolrepoKYH\\txtfiler\\CJL.txt");
-            File file = new File("\\txtfiler\\CJL.txt");
-            System.out.println(file.exists());
-
-
             // Använd scanner för att läsa filen
             Scanner sc = new Scanner(file);
 
