@@ -1,27 +1,8 @@
 package com.company.lecture4;
 
 public class Recursion {
-    public static void main(String[] args) {
-        // Starta med att anropa funktionen
-        helloRec(50);
-    }
-
-    public static void helloRec(int i){
-        if (i != 0){
-            System.out.println("hello " +i);
-            helloRec(i-1);
-        }
-/*
-        if (i == 0) {
-            return;
-        } else {
-            System.out.println("hello " + i);
-            helloRec(i-1);
-        }
-*/
-
-            /*
-        helloRec: Denna funktion tar in ett heltal "i".
+    /* Instruktioner
+    helloRec: Denna funktion tar in ett heltal "i".
 
         Instruktioner:
 
@@ -30,12 +11,31 @@ public class Recursion {
         Annars:
         2: Skriv ut "Hello " + i.
         3: Anropa helloRec igen, men minska i med 1.
-        */
 
-        // När ska vi stanna? ("Basfall")
 
-        // Skriv ut: Hello i
+    1: När ska vi stanna? ("Basfall")
+    2: Skriv ut: Hello i
+    3: Anropa sig själv
+    */
 
-        // Anropa sig själv
+    public static void helloRec(int i){
+        if (i != 0){
+            System.out.println("hello " +i);
+            helloRec(i-1);
+        }
+
+/*  ----Annan typ av if sats men samma resultat-----
+        if (i == 0) {
+            return;
+        } else {
+            System.out.println("hello " + i);
+            helloRec(i-1);
+        }
+*/
+    }
+
+    public static void main(String[] args) {
+        // Starta med att anropa funktionen
+        helloRec(50);
     }
 }
