@@ -57,6 +57,7 @@ public class FileCrawlerEdvin {
         }
 
     }
+
     public static void main(String[] args) {
         try {
             File startingFolder = new File("txtfiler/");
