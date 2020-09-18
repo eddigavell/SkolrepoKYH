@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class FileCrawler {
 
-
-
     public static void stepThroughFileAndSearch(File startFolder, String searchWord){
         if (startFolder.isDirectory()){
             File[] folderContents = startFolder.listFiles();
@@ -15,15 +13,9 @@ public class FileCrawler {
                 stepThroughFileAndSearch(f, searchWord);
             }
         } else if (startFolder.isFile()){
-
             try {
-                // Använd scanner för att läsa filen
                 Scanner sc = new Scanner(startFolder);
                 String s;
-
-                // Skriv ut filen, rad för rad
-                // Så länge scannern har en nästa rad:
-                // Läs raden från scannern, skriv ut på skärmen
                 while(sc.hasNextLine()) {
                     s = sc.nextLine();
                     if (s.equals(searchWord)){
@@ -31,20 +23,12 @@ public class FileCrawler {
                     }
 
                 }
-
-                // Stäng filen
                 sc.close();
-
             } catch (Exception e) {
                 System.out.println("An error occurred.");
             }
-
         }
     }
-
-
-
-
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -56,15 +40,5 @@ public class FileCrawler {
         System.out.println();
 
         stepThroughFileAndSearch(startingFolder, sokOrd);
-
-
-
-
-
-
-
-
-
-
     }
 }
