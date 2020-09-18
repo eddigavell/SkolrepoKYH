@@ -1,4 +1,4 @@
-package com.company;
+package com.company.snottfranyoutube;
 
 import java.io.IOException;
 import java.nio.file.Path;

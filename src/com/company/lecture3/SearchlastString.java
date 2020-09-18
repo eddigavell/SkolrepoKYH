@@ -1,4 +1,4 @@
-package com.company;
+package com.company.lecture3;
 
 public class SearchlastString {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.company;
+package com.company.lecture3;
 import java.util.*;
 
 public class RepeatWithErrors {

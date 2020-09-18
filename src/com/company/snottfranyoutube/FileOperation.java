@@ -1,4 +1,4 @@
-package com.company;
+package com.company.snottfranyoutube;
 
 import java.util.*;
 import java.io.*;
