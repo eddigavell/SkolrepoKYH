@@ -1,4 +1,4 @@
-package com.company;
+package com.company.LabWeek2;
 
 import java.io.*;
 import java.util.*;
