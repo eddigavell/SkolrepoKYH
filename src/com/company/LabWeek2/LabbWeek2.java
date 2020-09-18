@@ -7,8 +7,13 @@ import java.nio.file.*;
 
 public class LabbWeek2 {
 
+    public static String pathToCurrentFolder(String Path) {
+        Path currentRelativePath = Paths.get("");
+        String nuVarandeMapp = currentRelativePath.toAbsolutePath().toString();
+        return nuVarandeMapp;
+    }
 
-    public static void searchThroughDirectoryAndSubdirectories(String directoryName) {
+    public static void searchThroughDirectoryAndSubdirectories(String directoryName, String targetString) {
         File directory = new File(directoryName);
 
         //get all the files from a directory
@@ -17,9 +22,9 @@ public class LabbWeek2 {
         assert fList != null;
         for (File file : fList) {
             if (file.isFile()) {
-                System.out.println(file.getAbsolutePath());
+                readFilesinFolder(file.getAbsolutePath(), targetString);
             } else if (file.isDirectory()) {
-                searchThroughDirectoryAndSubdirectories(file.getAbsolutePath());
+                searchThroughDirectoryAndSubdirectories(file.getAbsolutePath(), targetString);
             }
         }
     }
@@ -36,6 +41,27 @@ public class LabbWeek2 {
         }
     }
 
+    public static void readFilesinFolder(String filename, String targetString) {
+        File file = new File(filename);
+
+        if (file.exists()) {
+            try {
+                Scanner sc = new Scanner(file);
+                String s;
+                while (sc.hasNextLine()) {
+                    s = sc.nextLine();
+                    if (s.equals(targetString)){
+                        System.out.println(file.getName() + " " + file.getCanonicalPath());
+                    }
+                }
+                sc.close();
+            } catch (Exception e) {
+                System.out.println("An error occured during reading file...");
+            }
+
+        }
+    }
+
     public static void main(String[] args) {
         //Ställa oss i rätt mapp. Börja räkna hur många filer som finns i mappen och undermappar.
         // Börja läsa igenom fil för fil efter en text sträng och om den finns så skriva ut filepath.
@@ -43,13 +69,11 @@ public class LabbWeek2 {
         Scanner sc = new Scanner(System.in);
 
         //Tar fram vilken nuvarande mapp är
-        Path currentRelativePath = Paths.get("");
-        String nuVarandeMapp = currentRelativePath.toAbsolutePath().toString();
-        System.out.println("Du befinner dig i mapp: " + nuVarandeMapp);
+        System.out.println("Du befinner dig i mapp: " + pathToCurrentFolder(""));
         System.out.println();
 
         System.out.println("I denna mapp så finns dessa mappar: ");
-        listDirectories(nuVarandeMapp);
+        listDirectories(pathToCurrentFolder(""));
 
         System.out.println();
         System.out.print("Vilken mapp vill du söka i? (Vill du söka igenom alla så skriv '.'): ");
@@ -58,20 +82,16 @@ public class LabbWeek2 {
 
 
         System.out.print("Skriv in ett sökord: ");
-        String targetWord = sc.next();
+        String targetString = sc.next();
 
 
 
 
         System.out.println(".....................");
-        System.out.println("Du vill söka igenom");
-        System.out.println("Mapp: " + targetDirectory);
-        System.out.println("Sökordet: " + targetWord);
+        System.out.println("Du vill söka igenom mapp '" + targetDirectory + "' och med sökordet '" + targetString + "'");
 
         System.out.println();
-        System.out.println("Dessa filer finns i denna mapp just nu: ");
-        searchThroughDirectoryAndSubdirectories(targetDirectory);
-
+        searchThroughDirectoryAndSubdirectories(targetDirectory, targetString);
     }
 
 }
