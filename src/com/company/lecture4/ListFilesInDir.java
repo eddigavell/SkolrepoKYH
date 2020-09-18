@@ -1,4 +1,4 @@
-package kyh.exercises.lecture4;
+package com.company.lecture4;
 
 import java.io.File;
 import java.util.Arrays;
