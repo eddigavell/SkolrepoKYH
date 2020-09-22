@@ -18,22 +18,23 @@ public class FileCrawler {
                 String s;
                 while(sc.hasNextLine()) {
                     s = sc.nextLine();
-                    if (s.equals(searchWord)){
-                        System.out.println(startFolder.getName() + " " + startFolder.getCanonicalPath());
+                    if (s.contains(searchWord)){
+                        System.out.println(startFolder.getName() + " " + startFolder.getAbsolutePath());
                     }
-
                 }
                 sc.close();
             } catch (Exception e) {
-                System.out.println("An error occurred.");
+                System.err.println("Couldn't read " + startFolder.getName() + " in " + startFolder.getAbsolutePath());
             }
         }
     }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         File startingFolder = new File("txtfiler/");
 
+        System.out.println("-------Program FileCrawler-------");
         System.out.print("Vad vill du söka efter? ");
         String sokOrd = sc.next();
         System.out.println("Du söker efter: " + sokOrd + " \ni mapp: " + startingFolder);
