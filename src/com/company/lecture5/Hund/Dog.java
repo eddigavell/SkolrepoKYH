@@ -5,7 +5,7 @@ public class Dog {
     private String breed;
     private String call;
 
-    protected Dog(String inputName, String inputBreed) {
+    Dog(String inputName, String inputBreed) {
         this.name = inputName;
         this.breed = inputBreed;
 
@@ -18,28 +18,41 @@ public class Dog {
 
     }
 
-    protected String getName() {
+    String getName() {
         return this.name;
     }
 
-    protected void setName(String inputName) {
+    private void setName(String inputName) {
         this.name = inputName;
     }
 
-    protected String getBreed() {
+    String getBreed() {
         return this.breed;
     }
 
-    protected void setBreed(String inputBreed) {
+    private void setBreed(String inputBreed) {
         this.breed = inputBreed;
     }
 
-    protected void bark() {
+    void bark() {
             System.out.println(this.name + ": " + this.call);
     }
 
-    protected void chase(Dog d) {
+    void chase(Dog d) {
         this.bark();
         d.bark();
+    }
+
+    boolean eQuals(Dog d) {
+        //System.out.println(name);
+        //System.out.println(d.name);
+
+        //System.out.println(breed);
+        //System.out.println(d.breed);
+
+        //System.out.println(call);
+        //System.out.println(d.call);
+
+        return name == d.name && breed == d.breed && call == d.call;
     }
 }
