@@ -14,8 +14,9 @@ public class Main {
         dog2.bark();
         System.out.println();
 
+        System.out.println("hund 1 jagar hund 2");
         dog.chase(dog2);
-
+        System.out.println("hund 2 jagar hund 1");
         dog2.chase(dog);
 
     }

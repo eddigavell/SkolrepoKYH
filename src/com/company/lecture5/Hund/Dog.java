@@ -1,15 +1,15 @@
 package com.company.lecture5.Hund;
 
 public class Dog {
-    String name;
-    String breed;
-    String call;
+    private String name;
+    private String breed;
+    private String call;
 
-    Dog(String inputName, String inputBreed) {
-        name = inputName;
-        breed = inputBreed;
+    protected Dog(String inputName, String inputBreed) {
+        this.name = inputName;
+        this.breed = inputBreed;
 
-        switch (breed) {
+        switch (this.breed) {
             case "Tax" -> call = "Woof";
             case "Labrador" -> call = "WOOOOOFFF";
             case "Saint Bernard" -> call = "Nöff";
@@ -18,28 +18,28 @@ public class Dog {
 
     }
 
-    public String getName() {
-        return name;
+    protected String getName() {
+        return this.name;
     }
 
-    public void setName(String inputName) {
-        name = inputName;
+    protected void setName(String inputName) {
+        this.name = inputName;
     }
 
-    public String getBreed() {
-        return breed;
+    protected String getBreed() {
+        return this.breed;
     }
 
-    public void setBreed(String inputBreed) {
-        breed = inputBreed;
+    protected void setBreed(String inputBreed) {
+        this.breed = inputBreed;
     }
 
-    public void bark() {
-            System.out.println(name + ": " + call);
+    protected void bark() {
+            System.out.println(this.name + ": " + this.call);
     }
 
-    public void chase(Dog d) {
-        bark();
+    protected void chase(Dog d) {
+        this.bark();
         d.bark();
     }
 }
