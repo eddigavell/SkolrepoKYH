@@ -1,5 +1,5 @@
 Katt
-com.company.lecture6.Hund.Hund
+Hund
 Räv
 Dinosaurie
 Mård
