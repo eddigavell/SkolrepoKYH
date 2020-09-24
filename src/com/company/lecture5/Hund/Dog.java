@@ -1,11 +1,16 @@
 package com.company.lecture5.Hund;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Date;
+
 public class Dog {
     private String name;
     private String breed;
     private String call;
+    private Date birthDate;
 
-    Dog(String inputName, String inputBreed) {
+    Dog(String inputName, String inputBreed, Date birthDate) {
         this.name = inputName;
         this.breed = inputBreed;
 
@@ -15,7 +20,43 @@ public class Dog {
             case "Saint Bernard" -> call = "Nöff";
             case "Chihuahua" -> call = "Tjaru";
         }
+        this.birthDate = birthDate;
+    }
 
+    void getAge() {
+
+        Date timeNow = new Date();
+        int timeNowYears = timeNow.getYear();
+        int timeNowMonths = timeNow.getHours();
+        int timeNowDays = timeNow.getDay();
+        int timeNowHours = timeNow.getHours();
+        int timeNowSeconds = timeNow.getSeconds();
+
+        int birthDayInYears = this.birthDate.getYear();
+        int birthDayInMonths = this.birthDate.getHours();
+        int birthDayInDays = this.birthDate.getDay();
+        int birthDayInHours = this.birthDate.getHours();
+        int birthDayInSeconds = this.birthDate.getSeconds();
+
+        int differenceYear = timeNowYears-birthDayInYears;
+        int differenceMonths = timeNowMonths-birthDayInMonths;
+        int differenceDays = timeNowDays-birthDayInDays;
+
+        System.out.println();
+        System.out.println("Tid just nu: " + timeNow);
+        System.out.println("Föddes: " + this.birthDate);
+
+        System.out.println("Hunden är " + differenceYear + "år och " + differenceMonths + "månader, " + differenceDays + "dagar gammal.");
+
+        System.out.println(differenceDays);
+        System.out.println(timeNowDays);
+        System.out.println(birthDayInDays);
+
+
+    }
+
+    Date getBirthDate() {
+        return this.birthDate;
     }
 
     String getName() {
