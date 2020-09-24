@@ -1,7 +1,9 @@
 package com.company.lecture5.Hund;
 
+
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.ZoneId;
 import java.util.Date;
 
 public class Dog {
@@ -9,6 +11,34 @@ public class Dog {
     private String breed;
     private String call;
     private Date birthDate;
+
+    private static int conversionRateForDogYears = 7;
+
+    Dog(String name) {
+        this.name = name;
+        this.breed = "";
+
+        switch (this.breed) {
+            case "Tax" -> call = "Woof";
+            case "Labrador" -> call = "WOOOOOFFF";
+            case "Saint Bernard" -> call = "Nöff";
+            case "Chihuahua" -> call = "Tjaru";
+        }
+            this.birthDate = new Date();
+    }
+
+    Dog(String name, String breed) {
+        this.name = name;
+        this.breed = breed;
+
+        switch (this.breed) {
+            case "Tax" -> call = "Woof";
+            case "Labrador" -> call = "WOOOOOFFF";
+            case "Saint Bernard" -> call = "Nöff";
+            case "Chihuahua" -> call = "Tjaru";
+        }
+        this.birthDate = new Date();
+    }
 
     Dog(String inputName, String inputBreed, Date birthDate) {
         this.name = inputName;
@@ -23,37 +53,24 @@ public class Dog {
         this.birthDate = birthDate;
     }
 
-    void getAge() {
+    String getAge() {
+        LocalDate now = LocalDate.now();
+        Period result;
+        LocalDate birthDate = this.birthDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        result = Period.between(birthDate, now);
+        return result.getYears() + " " + result.getMonths() + " " + result.getDays();
 
+        /*
         Date timeNow = new Date();
-        int timeNowYears = timeNow.getYear();
-        int timeNowMonths = timeNow.getHours();
-        int timeNowDays = timeNow.getDay();
-        int timeNowHours = timeNow.getHours();
-        int timeNowSeconds = timeNow.getSeconds();
 
-        int birthDayInYears = this.birthDate.getYear();
-        int birthDayInMonths = this.birthDate.getHours();
-        int birthDayInDays = this.birthDate.getDay();
-        int birthDayInHours = this.birthDate.getHours();
-        int birthDayInSeconds = this.birthDate.getSeconds();
+        int differenceYear = timeNow.getYear()-this.birthDate.getYear();
+        int differenceMonths = timeNow.getMonth()-this.birthDate.getMonth();
+        int differenceDays = timeNow.getDay()-this.birthDate.getDay();
 
-        int differenceYear = timeNowYears-birthDayInYears;
-        int differenceMonths = timeNowMonths-birthDayInMonths;
-        int differenceDays = timeNowDays-birthDayInDays;
-
-        System.out.println();
-        System.out.println("Tid just nu: " + timeNow);
-        System.out.println("Föddes: " + this.birthDate);
-
-        System.out.println("Hunden är " + differenceYear + "år och " + differenceMonths + "månader, " + differenceDays + "dagar gammal.");
-
-        System.out.println(differenceDays);
-        System.out.println(timeNowDays);
-        System.out.println(birthDayInDays);
-
-
+        return "Hunden är " + differenceYear + "år och " + differenceMonths + "månader, " + differenceDays + "dagar gammal.";
+        */
     }
+
 
     Date getBirthDate() {
         return this.birthDate;
@@ -75,13 +92,19 @@ public class Dog {
         this.breed = inputBreed;
     }
 
-    void bark() {
+    void bark(String inputCall) {
+        if (inputCall == null || inputCall.equals("")) {
             System.out.println(this.name + ": " + this.call);
+        } else {
+            System.out.println(this.name + " " + inputCall);
+        }
     }
-
+    void bark() {
+        System.out.println(this.name + ": " + this.call);
+    }
     void chase(Dog d) {
-        this.bark();
-        d.bark();
+        this.bark("");
+        d.bark("");
     }
 
     boolean eQuals(Dog d) {
@@ -95,5 +118,9 @@ public class Dog {
         //System.out.println(d.call);
 
         return name == d.name && breed == d.breed && call == d.call;
+    }
+
+    public static int convertHumanYearsToDogYears(int humanYears) {
+        return humanYears * conversionRateForDogYears;
     }
 }
