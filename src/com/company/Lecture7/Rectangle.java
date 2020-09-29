@@ -1,6 +1,6 @@
 package com.company.Lecture7;
 
-public class Rectangle {
+class Rectangle implements Shape {
     private int width;
     private int height;
 
@@ -8,11 +8,11 @@ public class Rectangle {
         this.width = width;
         this.height = height;
     }
-    int getArea() {
+    public int getArea() {
         return this.width * this.height;
     }
 
-    int getCircumference() {
+    public int getCircumference() {
         return ((this.width*2) + (this.height*2));
     }
 }
