@@ -60,7 +60,7 @@ public class FileCrawlerEdvin {
 
     public static void main(String[] args) {
         try {
-            File startingFolder = new File("txtfiler/");
+            File startingFolder = new File("src/txtfiler/");
 
             System.out.println("Starting Path: " + startingFolder.getCanonicalPath());
             System.out.println("Contains: " + Arrays.toString(startingFolder.list()));
