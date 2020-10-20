@@ -14,7 +14,7 @@ class PlayingCard {
     }
 
     public PlayingCard() {
-        PlayingCard ace = new PlayingCard(1,"Hearts");
+        this(1,"Hearts");
     }
 
     public void setValue(int x) {
@@ -48,4 +48,22 @@ class PlayingCard {
 /* Den ska också ha en konstruktor som inte tar in något argument, den
 ska skapa upp en instans för kortet hjärter äss (“Hearts”, 1).
 */
+
+    public static void main(String[] args) {
+        PlayingCard kort1 = new PlayingCard();
+        //System.out.println(kort1);
+
+
+        //PlayingCard kort2 = new PlayingCard(5,"Diamonds");
+        //System.out.println(kort2);
+
+        //PlayingCard kort3 = new PlayingCard(-1, "Diamonds");
+        //System.out.println(kort3);
+
+        //PlayingCard kort4 = new PlayingCard(4, "Fisk");
+        //System.out.println(kort4);
+
+        System.out.println(kort1.toString());
+
+    }
 }
