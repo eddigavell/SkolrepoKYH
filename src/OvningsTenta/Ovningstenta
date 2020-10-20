@@ -1,0 +1,71 @@
+/*
+        1. int x; -> inte initierat dvs inget värde. = 5p.
+
+            public static void main(String[] args) {
+            int x;
+            System.out.println(x);
+            }
+
+        2.
+            primitiva typer:
+            double
+            int
+            boolean
+
+            icke-primitiva typer:
+            Classes -> String, List, Collection, Integer, Double
+
+
+        3.
+            a) Ja (sant) (public constructor)
+
+            b) nej (falsk) (package på bark())
+
+            c) Ja (sant) i samma klass.
+
+
+        4. För rätt svar:
+
+            0,1,2,3,4,0.
+
+            5%5 = 0
+            %6 = 1
+            %7 = 2
+            %8 = 3
+            %9 = 4
+            %10 = 0
+
+
+        5. Gå igenom själv och hitta förbättringar typ
+
+        6.
+            Börja med test som ska faila
+            skriv sedan koden som gör att testet går igenom
+            refaktorera koden
+
+            görs i denna ordningen för att säkertställa att koden gör det vi vill att den ska göra samt
+            att den ska vara
+
+
+        7.
+            1 per metod så att de räknar rätt.
+            1 extra på inte skicka in tom lista typ.
+
+
+
+        8.
+            String s = "Hello World";
+            System.out.println(s.substring(0,5));
+
+
+        9.
+            Sprint
+            Sprint planning
+
+            Sprint perspective
+
+
+        10.
+            x=4, y=15.
+            x=4, y=16
+ */
