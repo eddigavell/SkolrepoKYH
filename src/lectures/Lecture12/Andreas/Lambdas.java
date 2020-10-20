@@ -1,12 +1,12 @@
-package Lecture12.Andreas;
+package lectures.Lecture12.Andreas;
 
 public class Lambdas {
     public static void runMethod(Hello lambdaFunc) {
         lambdaFunc.sayHello();
     }
 
-    public static LambdaInterfaces.MyLambda getFunc() {
-        LambdaInterfaces.MyLambda safeDivideFunction = (a, b) -> {
+    public static Lecture12.Andreas.LambdaInterfaces.MyLambda getFunc() {
+        Lecture12.Andreas.LambdaInterfaces.MyLambda safeDivideFunction = (a, b) -> {
             if (b == 0) return 0;
             return a / b;
         };
@@ -34,15 +34,15 @@ public class Lambdas {
         (a, b) -> a*b;  // Två argument
         */
 
-        LambdaInterfaces.MyLambda addFunction = (a, b) -> a + b;
+        Lecture12.Andreas.LambdaInterfaces.MyLambda addFunction = (a, b) -> a + b;
 
-        LambdaInterfaces.MyLambda aFunction = getFunc();
+        Lecture12.Andreas.LambdaInterfaces.MyLambda aFunction = getFunc();
         aFunction.func(2, 2);
 
         // variabler funkar precis som vanligt, kan kopiera till andra variabler
-        LambdaInterfaces.MyLambda funcA = aFunction;
-        LambdaInterfaces.MyLambda funcB = funcA;
-        LambdaInterfaces.MyLambda funcC = funcB;
+        Lecture12.Andreas.LambdaInterfaces.MyLambda funcA = aFunction;
+        Lecture12.Andreas.LambdaInterfaces.MyLambda funcB = funcA;
+        Lecture12.Andreas.LambdaInterfaces.MyLambda funcC = funcB;
         funcC.func(1, 1);
 
         // Gör en metod som kör string length

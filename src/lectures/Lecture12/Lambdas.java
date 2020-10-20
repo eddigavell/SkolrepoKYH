@@ -1,12 +1,12 @@
-package Lecture12;
+package lectures.Lecture12;
 
 public class Lambdas {
-    public static void  runMethod (LambdaInterfaces.Hello lamdaFunc) {
+    public static void  runMethod (Lecture12.LambdaInterfaces.Hello lamdaFunc) {
         lamdaFunc.sayHello();
     }
 
     public static Lecture12.LambdaInterfaces.MyLambda getFunc() {
-        LambdaInterfaces.MyLambda safeDivideFunction = (a, b) -> {
+        Lecture12.LambdaInterfaces.MyLambda safeDivideFunction = (a, b) -> {
             if (b == 0) return 0;
             return a/b;
         };
@@ -17,7 +17,7 @@ public class Lambdas {
 
     public static void main(String[] args) {
         //Gör helloworld på några olika sätt
-        LambdaInterfaces.Hello helloVar = () -> System.out.println("Hello!");
+        Lecture12.LambdaInterfaces.Hello helloVar = () -> System.out.println("Hello!");
 
         helloVar.sayHello();
 
@@ -43,14 +43,14 @@ public class Lambdas {
         (a, b) -> a*b;
         */
 
-        LambdaInterfaces.MyQuad quadFunction = a -> a*a;
+        Lecture12.LambdaInterfaces.MyQuad quadFunction = a -> a*a;
 
-        LambdaInterfaces.MyLambda aFunction = getFunc();
+        Lecture12.LambdaInterfaces.MyLambda aFunction = getFunc();
         aFunction.func(2,2);
 
-        LambdaInterfaces.MyLambda funcA = aFunction;
-        LambdaInterfaces.MyLambda funcB = funcA;
-        LambdaInterfaces.MyLambda funcC = funcB;
+        Lecture12.LambdaInterfaces.MyLambda funcA = aFunction;
+        Lecture12.LambdaInterfaces.MyLambda funcB = funcA;
+        Lecture12.LambdaInterfaces.MyLambda funcC = funcB;
 
         funcC.func(1,1);
 
@@ -64,7 +64,7 @@ public class Lambdas {
         System.out.println(aFunction.func(8,2));
         System.out.println(aFunction.func(8,0));
 
-        LambdaInterfaces.MyString strLenFunction = (s) -> s.length();
+        Lecture12.LambdaInterfaces.MyString strLenFunction = (s) -> s.length();
         System.out.println(strLenFunction.strLen("Hello Lambda!"));
     }
 }
