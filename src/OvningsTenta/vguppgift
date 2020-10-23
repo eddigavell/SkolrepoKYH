@@ -1,0 +1,41 @@
+public class PlayingCard {
+    int value;
+    String color;
+
+    PlayingCard(int value, String color) {
+        setValue(value);
+        setColor(color);
+    }
+
+    PlayingCard() {
+        this(1, "Hearts");
+    }
+
+    void setValue(int x) {
+        if (x >=1 || x<=11) {
+            this.value = x;
+        } else {
+            throw new Illegalexception("Illegal value");
+        }
+    }
+
+    void setColor(String x) {
+        if (x.equals("Hearts") || x.equals("Diamonds") || ......) {
+            this.color = x;
+        } else {
+            throw new Illegalexception("Illegal color");
+        }
+    }
+
+    String getColor() {
+        return this.color;
+    }
+
+    int getValue() {
+        return this.value;
+    }
+
+    Public String toString() {
+        return this.value+" of "+this.color;
+    }
+}

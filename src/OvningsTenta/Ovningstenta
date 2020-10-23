@@ -2,19 +2,22 @@
         1. int x; -> inte initierat dvs inget värde. = 5p.
 
             public static void main(String[] args) {
-            int x;
-            System.out.println(x);
+                int x;
+                System.out.println(x);
             }
 
         2.
             primitiva typer:
-            double
-            int
-            boolean
+            byte, short, int, long, float, double, boolean, char.
 
             icke-primitiva typer:
             Classes -> String, List, Collection, Integer, Double
 
+            Primitive types are predefined (already defined) in Java. Non-primitive types are created by the programmer and is not defined by Java (except for String).
+            Non-primitive types can be used to call methods to perform certain operations, while primitive types cannot.
+            A primitive type has always a value, while non-primitive types can be null.
+            A primitive type starts with a lowercase letter, while non-primitive types starts with an uppercase letter.
+            The size of a primitive type depends on the data type, while non-primitive types have all the same size.
 
         3.
             a) Ja (sant) (public constructor)
@@ -22,7 +25,6 @@
             b) nej (falsk) (package på bark())
 
             c) Ja (sant) i samma klass.
-
 
         4. För rätt svar:
 
@@ -35,8 +37,7 @@
             %9 = 4
             %10 = 0
 
-
-        5. Gå igenom själv och hitta förbättringar typ
+        5. Gå igenom själv och hitta förbättringar typ, kolla Uppgift5 package.
 
         6.
             Börja med test som ska faila
@@ -46,24 +47,21 @@
             görs i denna ordningen för att säkertställa att koden gör det vi vill att den ska göra samt
             att den ska vara
 
-
         7.
             1 per metod så att de räknar rätt.
             1 extra på inte skicka in tom lista typ.
-
-
 
         8.
             String s = "Hello World";
             System.out.println(s.substring(0,5));
 
-
         9.
             Sprint
             Sprint planning
-
+            Sprint review
             Sprint perspective
-
+            Sprint retrospective
+            https://sv.wikipedia.org/wiki/Scrum
 
         10.
             x=4, y=15.
